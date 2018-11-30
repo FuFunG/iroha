@@ -11,10 +11,10 @@ using Variant =
     shared_model::proto::QueryResponse::ProtoQueryResponseVariantType;
 template Variant::~variant();
 template Variant::variant(Variant &&);
-template void Variant::destroy_content();
-template int Variant::which() const;
-template void Variant::indicate_which(int);
-template bool Variant::using_backup() const;
+template void Variant::destroy_content() noexcept;
+template int Variant::which() const noexcept;
+template void Variant::indicate_which(int) noexcept;
+template bool Variant::using_backup() const noexcept;
 
 namespace shared_model {
   namespace proto {

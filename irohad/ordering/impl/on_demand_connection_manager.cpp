@@ -8,6 +8,7 @@
 #include <boost/range/combine.hpp>
 #include "interfaces/iroha_internal/proposal.hpp"
 
+using namespace iroha;
 using namespace iroha::ordering;
 
 OnDemandConnectionManager::OnDemandConnectionManager(

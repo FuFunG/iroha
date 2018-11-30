@@ -7,14 +7,15 @@
 
 #include <unordered_set>
 
+#include <boost/range/adaptor/indirected.hpp>
 #include <boost/range/adaptor/transformed.hpp>
 #include <boost/range/algorithm/for_each.hpp>
-#include <boost/range/adaptor/indirected.hpp>
 #include "datetime/time.hpp"
 #include "interfaces/iroha_internal/proposal.hpp"
 #include "interfaces/iroha_internal/transaction_batch.hpp"
 #include "interfaces/transaction.hpp"
 
+using namespace iroha;
 using namespace iroha::ordering;
 
 /**
@@ -25,7 +26,7 @@ const iroha::consensus::RejectRoundType kFirstRound = 1;
 OnDemandOrderingServiceImpl::OnDemandOrderingServiceImpl(
     size_t transaction_limit,
     std::unique_ptr<shared_model::interface::UnsafeProposalFactory>
-              proposal_factory,
+        proposal_factory,
     size_t number_of_proposals,
     const consensus::Round &initial_round)
     : transaction_limit_(transaction_limit),
